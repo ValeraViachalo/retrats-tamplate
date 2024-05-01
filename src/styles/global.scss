@@ -21,5 +21,20 @@ body {
 }
 
 .container {
-  padding: 0 4vw;
+  padding-right: 4vw;
+  padding-left: 4vw;
+}
+
+.shadow {
+  color: $g-70;
+}
+
+.main {
+  &--loading {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
 }

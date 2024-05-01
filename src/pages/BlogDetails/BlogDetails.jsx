@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { getPostDetails } from "@/helpers/sanity/getBlog";
 import SanityBlockContent from "@sanity/block-content-to-react";
@@ -23,6 +23,11 @@ export default function BlogDetails() {
     queryFn: () => getPostDetails(postSlug),
     queryKey: ["post"],
   });
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
 
   return (
     <>

@@ -1,5 +1,5 @@
 import { getBlog } from "@/helpers/sanity/getBlog";
-import React from "react";
+import React, { useEffect } from "react";
 import { useQuery } from "react-query";
 import { Card } from "./Card/Card";
 import { motion, AnimatePresence, useIsPresent } from "framer-motion";
@@ -15,6 +15,10 @@ export default function Blog() {
     queryFn: () => getBlog(),
     queryKey: ["data"],
   });
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <>

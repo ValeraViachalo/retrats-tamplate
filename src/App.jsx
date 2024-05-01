@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation, useRoutes } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { AnimatePresence } from "framer-motion";
@@ -9,10 +9,14 @@ import Home from "./pages/Home/Home";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import Blog from "./pages/Blog/Blog";
 import BlogDetails from "./pages/BlogDetails/BlogDetails";
+import Footer from "./components/Footer/Footer";
+import { Loader } from "./components/Loader/Loader";
+import classNames from "classnames";
 
 const queryC = new QueryClient();
 
 function App() {
+  const [loaderFinished, setLoaderFinished] = useState(false);
 
   const element = useRoutes([
     {
@@ -47,14 +51,17 @@ function App() {
 
   return (
     <QueryClientProvider client={queryC}>
-      <main>
-        <ScrollProvider>
-          <Header />
-          
-          <AnimatePresence mode="wait" initial={false}>
-              {React.cloneElement(element, { key: location.pathname })}
-          </AnimatePresence>
-        </ScrollProvider>
+      <main className={classNames("main", {
+        "main--loading": !loaderFinished
+      })}>
+          <ScrollProvider>
+            {!loaderFinished && (<Loader setLoaderFinished={setLoaderFinished}/>)}
+            <Header />
+            <AnimatePresence mode="wait" initial={false}>
+                {React.cloneElement(element, { key: location.pathname })}
+            </AnimatePresence>
+            <Footer />
+          </ScrollProvider>
       </main>
     </QueryClientProvider>
   )

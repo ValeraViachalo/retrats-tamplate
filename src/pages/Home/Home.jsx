@@ -1,5 +1,5 @@
 import FullWidthBg from "@/components/FullWidthBg/FullWidthBg";
-import React from "react";
+import React, { useEffect } from "react";
 import "./Home.scss";
 import { useIsPresent } from "framer-motion";
 import { Transition } from "@/components/Transition/Transition";
@@ -7,23 +7,29 @@ import { Transition } from "@/components/Transition/Transition";
 export default function Home() {
   const isPresent = useIsPresent();
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <>
       <main className="home">
         <FullWidthBg
-          classSection="home-section section-1 "
-          url="https://images.unsplash.com/photo-1604079628040-94301bb21b91?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          classSection="home-section"
+          type="video"
+          url="https://images.beta.cosmos.so/4820ce0b-773c-4953-8e4b-d54c9db9718a.mp4"
         >
-          <div className="home__content">
-            <h1>
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout.
-            </h1>
-          </div>
+          <h1 className="super-text home__title">RTRTS</h1>
+        </FullWidthBg>
+        <FullWidthBg
+          classSection="home-section home-section-1 "
+          url="https://images.beta.cosmos.so/21b09005-9166-4ac3-ba31-9436a28d0794.?format=jpeg"
+        >
+
         </FullWidthBg>
         <FullWidthBg
           classSection="home-section section-2 "
-          url="https://images.unsplash.com/photo-1604076913837-52ab5629fba9?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          url="https://images.beta.cosmos.so/833c7ce8-0376-454f-9610-09f3ec21f24a?format=jpeg"
         >
           <div className="home__content">
             <h1>Matthias Leidinger</h1>
@@ -43,7 +49,8 @@ export default function Home() {
         <FullWidthBg
           classSection="home-section section-3"
           id="clement"
-          url="https://images.unsplash.com/photo-1550275994-2bc88dc68637?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTd8M1JwNl9KdnJtU1l8fGVufDB8fHx8fA%3D%3D"
+          type="video"
+          url="https://images.beta.cosmos.so/7d13e75d-c0f3-4db4-856a-253498684a81.mp4"
         >
           <div className="home__content">
             <h1>Clément Chapillon</h1>
@@ -51,20 +58,6 @@ export default function Home() {
             images don’t insist on a narrative. Both crisp and ethereal, they’re
             encoded with an ambiguity—a certain tension—that lets the viewer
             find their own story within them.
-          </div>
-        </FullWidthBg>
-        <FullWidthBg
-          classSection="home-section section-4 "
-          url="https://images.unsplash.com/photo-1533158326339-7f3cf2404354?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8"
-        >
-          <div className="home__content">
-            <h1>Mathias Svold and Ulrik Hasemann</h1>
-            Dutch photographer Mark Rammers has shared with IGNANT the first
-            chapter of his latest photographic project, ‘all over
-            again’—captured while in residency at Hektor, an old farm in Los
-            Valles, Lanzarote. Titled ‘Beginnings’, the mesmerizing collection
-            of images is a visual and meditative journey into the origins of
-            regrets and the uncertainty of stepping into new unknowns.
           </div>
         </FullWidthBg>
       </main>

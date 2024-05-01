@@ -3,6 +3,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &-1 {
+      height: 200vh;
+    }
   }
   
   &__content{
@@ -11,5 +15,18 @@
     margin: 0 auto;
     padding: 10vw;
     text-align: center;
+  }
+
+  &__title {
+    color: rgb(255, 255, 255);
+    mix-blend-mode: difference;
+    font-weight: normal;
+  }
+}
+
+#clement {
+  .home__content {
+    mix-blend-mode: difference;
+    color: wheat;
   }
 }

@@ -19,3 +19,15 @@
     }
   }
 }
+
+@function VW($px, $base: 1920) {
+  @return calc(($px / $base) * 100vw);
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
