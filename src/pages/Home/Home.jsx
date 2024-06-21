@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import "./Home.scss";
 import { useIsPresent } from "framer-motion";
 import { Transition } from "@/components/Transition/Transition";
+import { VideoPlayer } from "@/components/VideoPlayer/VideoPlayer";
 
 export default function Home() {
   const isPresent = useIsPresent();
@@ -46,6 +47,12 @@ export default function Home() {
             story within them.
           </div>
         </FullWidthBg>
+        <div className="home-video">
+          <VideoPlayer
+            url="https://twid.studio/wp-content/uploads/showreel-twid-2_xptPSgWb.mp4"
+            customClass="home-video__video"
+          />
+        </div>
         <FullWidthBg
           classSection="home-section section-3"
           id="clement"

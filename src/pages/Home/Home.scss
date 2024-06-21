@@ -22,6 +22,19 @@
     mix-blend-mode: difference;
     font-weight: normal;
   }
+
+  &-video {
+    height: 100vh;
+    margin: 15vw;
+
+    &__video {
+      // height: 100%;
+      // width: 100%;
+      aspect-ratio: 16/9;
+      padding: 0.1vw;
+      border: 0.1vw solid;
+    }
+  }
 }
 
 #clement {
